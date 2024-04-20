@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/keywordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KeyWord"
+   />
+
+    <TextView
+        android:id="@+id/keywordError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keywordText"
+        android:text="Please enter manadatory field"
+        android:textColor="#ff0000"
+        android:visibility="gone"
+        />
+
+    <!--<EditText-->
+        <!--android:id="@+id/keywordInout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/keywordText"-->
+        <!--android:hint="Enter keyword"-->
+        <!--android:maxLines="1"/>-->
+
+        <android.support.v7.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/keywordInout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:hint="Enter keyword"
+            android:inputType="text"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/selected_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keywordInout"
+        android:text="Category" />
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/category"/>
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:layout_below="@+id/categorySpinner" />
+
+    <EditText
+        android:id="@+id/distanceInout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/distance"
+        android:hint="10"
+        android:inputType="number"
+        android:maxLines="1"
+        android:maxLength="6"
+        />
+
+    <Spinner
+        android:id="@+id/unitSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/distanceInout"/>
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:layout_below="@+id/unitSpinner" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:orientation="vertical"
+        android:layout_below="@+id/from">
+        <RadioButton
+            android:id="@+id/location1"
+            android:text="Current location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/location2"
+            android:text="Other. Specify Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/locationError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:text="Please enter manadatory field"
+        android:textColor="#ff0000"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/locationInput"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:hint="Type in the Location"
+        android:enabled="false"
+        android:maxLines="1" />
+
+    <LinearLayout
+        android:layout_below="@+id/locationInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/searchButton"
+            android:text="SEARCH"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:text="CLEAR"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
